@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Purple */
+  --color-primary: #9013fe;
+  --color-primary-hover: #8628da;
+  --color-primary-light: #eef2ff;
+  --color-primary-border: #E9D4FF;
+
+  /* Secondary Colors - Cyan */
+  --color-secondary: #70D6FF;
+
+  /* Accent Colors */
+  --color-accent: #9301fe;
+  --color-accent-pink: #FF9FF5;
+
+  /* Background Colors */
+  --color-bg-main: #f9fafb;
+  --color-bg-gray-50: #f3f4f6;
+  --color-bg-gray-100: #e5e7eb;
+  --color-bg-gray-200: #e2e8f0;
+  --color-bg-gray-300: #d7e0ed;
+  --color-bg-white: #ffffff;
+
+  /* Text Colors */
+  --color-text-dark: #2D3748;
+  --color-text-gray-600: #4a5568;
+  --color-text-gray-500: #6b7280;
+  --color-text-gray-700: #374151;
+
+  /* Border Colors */
+  --color-border: #f3f4f6;
+  --color-border-gray: #e5e7eb;
+
+  /* Status Colors */
+  --color-disabled: #cbd5e0;
+  --color-locked: #d7e0ed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-gray-50);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-gray-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-gray-200);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-disabled);
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg-gray-200) var(--color-bg-gray-50);
+}
+
+/* Utility Classes */
+.gradient-purple-cyan {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.gradient-purple-pink {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent-pink));
+}
+
+.card-shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-bounceIn {
+  animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Typography */
+@layer base {
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+
+  h2 {
+    @apply text-xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg font-semibold;
+  }
+}
+
+/* Sidebar Layout */
+.main-content-with-sidebar {
+  margin-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .main-content-with-sidebar {
+    margin-left: 256px;
+  }
+}
