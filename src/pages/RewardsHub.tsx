@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Bell, Menu } from 'lucide-react';
-import { Tabs, ConfettiModal } from '../components/ui';
+import { Tabs, ConfettiModal, CardSkeleton } from '../components/ui';
 import {
   Sidebar,
   PointsBalance,
@@ -14,7 +14,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { userService } from '../services';
 
 export const RewardsHub: React.FC = () => {
-  const { user, userProfile, refreshUserProfile } = useAuth();
+  const { user, userProfile, refreshUserProfile, loading } = useAuth();
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [canCheckIn, setCanCheckIn] = useState(false);
   const [checkingIn, setCheckingIn] = useState(false);
@@ -94,7 +94,31 @@ export const RewardsHub: React.FC = () => {
     );
   }
 
-  const earnPointsTab = (
+  const earnPointsTab = loading ? (
+    <div>
+      <div>
+        <h2 className="text-lg md:text-2xl my-3 text-black border-l-4 border-[var(--color-accent)] pl-3 font-semibold">
+          Your Rewards Journey
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+        </div>
+      </div>
+
+      <div className="space-y-6 mt-8">
+        <h2 className="text-lg md:text-2xl my-3 text-black border-l-4 border-[var(--color-accent)] pl-3 font-semibold">
+          Earn More Points
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+        </div>
+      </div>
+    </div>
+  ) : (
     <div>
       <div>
         <h2 className="text-lg md:text-2xl my-3 text-black border-l-4 border-[var(--color-accent)] pl-3 font-semibold">
@@ -125,7 +149,21 @@ export const RewardsHub: React.FC = () => {
     </div>
   );
 
-  const redeemRewardsTab = (
+  const redeemRewardsTab = loading ? (
+    <div>
+      <h2 className="text-lg md:text-2xl my-3 text-black border-l-4 border-[var(--color-accent)] pl-3 font-semibold">
+        Available Rewards
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <CardSkeleton />
+        <CardSkeleton />
+        <CardSkeleton />
+        <CardSkeleton />
+        <CardSkeleton />
+        <CardSkeleton />
+      </div>
+    </div>
+  ) : (
     <RewardsGrid userPoints={userProfile.points_balance} onRewardRedeemed={handleRewardRedeemed} />
   );
 

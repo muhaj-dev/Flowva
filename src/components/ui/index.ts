@@ -4,3 +4,4 @@ export { Modal } from './Modal';
 export { Tabs } from './Tabs';
 export { Input, FileInput } from './Input';
 export { ConfettiModal } from './ConfettiModal';
+export { Skeleton, CardSkeleton, FullPageLoader } from './Skeleton';
