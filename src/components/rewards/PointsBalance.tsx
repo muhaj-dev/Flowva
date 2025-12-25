@@ -29,7 +29,7 @@ export const PointsBalance: React.FC<PointsBalanceProps> = ({
             {points}
           </div>
           {/* Coin Icon */}
-          <div className="w-16 h-16">
+          <div className="w-20 h-20">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="coin-gradient-1" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="-50.07" y1="-91.04" x2="70.08" y2="67.8">

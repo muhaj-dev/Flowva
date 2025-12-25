@@ -53,14 +53,14 @@ export const DailyStreak: React.FC<DailyStreakProps> = ({
           })}
         </div>
 
-        <p className="text-sm text-gray-600 text-center mt-3">
+        <p className="text-sm text-gray-600 text-center mt-4">
           Check in daily to to earn +5 points
         </p>
 
         <Button
           variant={canCheckIn ? 'primary' : 'disabled'}
           size="md"
-          className="mt-3 w-full"
+          className="mt-4 w-full text-[15px]"
           onClick={onCheckIn}
           disabled={!canCheckIn || loading}
           icon={Zap}

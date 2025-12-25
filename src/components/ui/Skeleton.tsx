@@ -71,12 +71,7 @@ export const FullPageLoader: React.FC = () => {
             className="w-32 h-32 mx-auto object-contain animate-pulse"
           />
         </div>
-        <div className="flex items-center justify-center gap-2">
-          <div className="w-3 h-3 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-          <div className="w-3 h-3 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-          <div className="w-3 h-3 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-        </div>
-        <p className="mt-4 text-gray-600 font-medium">Loading Flowva...</p>
+
       </div>
     </div>
   );
