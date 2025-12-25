@@ -2,6 +2,11 @@
 
 A comprehensive rewards and gamification platform built with React, TypeScript, and Supabase. This application enables users to earn points through various activities, maintain daily streaks, refer friends, and redeem rewards.
 
+## 🔗 Links
+
+- **Live Demo**: [https://flowva-five.vercel.app/](https://flowva-five.vercel.app/)
+- **GitHub Repository**: [https://github.com/muhaj-dev/Flowva](https://github.com/muhaj-dev/Flowva)
+
 ## Features
 
 - **Points System**: Earn points through daily check-ins, task completion, and referrals
